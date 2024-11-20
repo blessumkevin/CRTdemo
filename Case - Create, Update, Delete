@@ -1,0 +1,65 @@
+Create New Case Record
+
+
+
+    LaunchApp    Service
+    ClickText    Cases
+    ClickText     New
+    UseModal      On
+    PickList     *Status    Working
+    ComboBox    Search Contacts...    David Montgomery
+    PickList    Type    Electrical
+    PickList    Case Reason    Installation
+    UseModal      Off                         #Turn off UseModal to interact with the error notification.
+    ClickText     Save    partial_match=False
+    VerifyText    We hit a snag.
+    VerifyText    Review the following fields
+    UseModal      On
+    PickList    *Case Origin    Email
+    ClickText   Save                        partial_match=false
+
+
+    
+    #Create Poll
+
+    ClickText    Poll
+    TypeText    Question    Should I respond to this case?
+    ClickText    Choice 1
+    TypeText    Choice 1    Yes
+    ClickText    Choice 2
+    TypeText    Choice 2    No
+    ClickText    Add new choice
+    ClickText    Choice 3
+    TypeText    Choice 3    Maybe
+    ClickText    Add new choice
+    ClickText    Choice 4
+    TypeText    Choice 4    Yep
+    ClickText    Ask    partial_match=False
+   
+   #Delete Poll
+
+    ClickText    Actions for this Feed Item
+    ClickText    Delete on Chatter
+    UseModal    On
+    ClickText    Delete on Chatter
+    UseModal    Off
+
+    #Create Case Comment
+
+    ClickText    Related
+    ClickText    New    partial_match=False
+    UseModal    On
+    TypeText    Body*    I am already in contact with this individual via the chat.
+    ClickCheckbox    Public    on
+    ClickText    Save
+
+    # Wait 3 Seconds
+    Sleep    3
+
+
+    #Delete Case Record
+
+    ClickText    Delete    anchor=Close this window
+    UseModal    On
+    ClickText    Delete
+    UseModal    Off
