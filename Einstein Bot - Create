@@ -1,0 +1,39 @@
+Build Einstein Robot
+
+    GoTo    https://login.salesforce.com/
+    TypeText    Username    dev1@copado.com
+    TypeSecret    Password    copado2019\n
+    TypeText    Quick Find    einstein bot\n
+    ClickText    Einstein Bots        partial_match=false
+    ClickText    Create a New Bot
+    ClickText    Standard Bot
+    ClickText    Next
+    ClickText    Start from Scratch
+    ClickText    Next
+    TypeText    Enter your bot's name    Erica
+    ClickText    Next
+    TypeText    Example: Check my order    Check my order
+    TypeText    Example: Report a problem    Report a problem
+    ClickText    Next
+    ClickText    Next
+    ClickText    Proceed
+    Wait         3
+    ClickText    Finish                      anchor=5
+    SwitchWindow    NEW
+    SwitchWindow    2
+    
+    ClickElement     /html/body/div[4]/div[3]/div/div[1]/div/div/div/div/div/div/div[2]/div[1]/div/div/builder_service_chatbots-dialog-detail/chatbots-movable-boundary/slot/div/section/div[1]/builder_service_chatbots-element-menu/div/section/div/builder_service_chatbots-step-components/div[2]/chatbots-movable-boundary[2]/slot/div/div/ul/chatbots-movable-item[2]/slot/div/div/div
+    TypeText    *Ask a question    What is your first name?
+    TypeText    *Entity Name       [System]
+    ClickText    [System] Text (Text)
+    ClickText    *Save Answer to Variable
+    ClickText    New Text Variable
+    UseModal    On
+    TypeText    *Name    First Name
+    ClickText    *API Name
+    ClickElement   /html/body/div[4]/div[3]/div/builder_service_chatbots-modal-variable/builder_service_chatbots-modal-form/lightning-dialog/section/lightning-focus-trap/slot/div/div/footer/slot/div/slot/button[2]
+    ClicKText    Save
+    ClickText    Activate
+
+    ClickText    Open dropdown
+    ClickText    Overview
