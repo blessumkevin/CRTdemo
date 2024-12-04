@@ -1,21 +1,26 @@
-Create New Lead
+New Lead
+
+    
     Home
-    LaunchApp                   Sales
-    ClickUntil                  Recently Viewed             Leads
-    ClickText                   New
-
-    UseModal                    On                          #The UseModal keyword allows us to easily target only the elements on the currently active modal.
-    VerifyText                  New Lead
-
-    TypeText                    First Name                  Demo
-    TypeText                    Last Name                   McTest
-    ClickText                   Save                        partial_match=false
-    UseModal                    Off                         #Turn off UseModal to interact with the error notification.
+    LaunchApp    Sales
+    ClickText    Leads
+    ClickText    New
+    UseModal     On
+    TypeText     First Name    Demo
+    TypeText     Last Name     McTest
+    TypeText     Phone         5552361743
+    ClickText    Save          partial_match=false
+    UseModal     Off
     VerifyText                  We hit a snag.
     VerifyText                  Review the following fields
 
-    UseModal                    On
-    TypeText                    Company                     ${company}
-    ClickText                   Save                        partial_match=false
-    ClickText                   Delete
-    ClickText                   Delete
+    #Fill in remaining fields, save form
+    UseModal     On
+    TypeText     Company       ABC Corporation
+    ClickText    Save                        partial_match=false
+    VerifyText   Demo McTest
+    UseModal     Off
+    ClickText    Delete    anchor=Close this window
+    UseModal    On
+    ClickText    Delete
+    UseModal    Off
