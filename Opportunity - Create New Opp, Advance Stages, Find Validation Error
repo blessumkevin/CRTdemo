@@ -1,0 +1,49 @@
+Opportunity Advancement Process
+
+
+    #Create New Opportunity Record
+
+    ClickText    Opportunities
+    ClickText    New
+    UseModal    On
+    TypeText    *Opportunity Name    Expansion Bundle
+    TypeText    *Close Date          6/30/2025
+    PickList    *Stage    Prospecting
+    ComboBox    Search Accounts...    Acme Inc
+    TypeText    Amount    50000
+    PickList    Lead Source    Web
+    ClickText    Save    partial_match=False
+    UseModal    Off
+
+
+    #Advance Opportunity Stages
+
+    ClickText    Qualification
+    ClickText    Mark as Current Stage
+    ClickText    Needs Analysis
+    ClickText    Mark as Current Stage
+    ClickText    Value Proposition
+    ClickText    Mark as Current Stage
+    VerifyText   You encountered some errors when trying to save this record
+    VerifyText   Please fill in the Next Step field before advancing this opportunity further.
+    Wait        2
+    ClickText    Details
+    ClickText    Edit Next Step
+    TypeText    Next Step    We are meeting with the decision maker next week to validate vendor of choice.
+    ClickText    Save
+    ClickText    Value Proposition
+    ClickText    Mark as Current Stage
+    ClickText    Edit Stage
+    PickList    *Stage    Closed Won
+    ClickText    Save
+    Wait        3
+    
+    #Delete The Opportunity Record
+
+
+    ClickText
+    ClickText    Show more actions    anchor=Submit for Approval
+    ClickText    Delete
+    UseModal    On
+    ClickText    Delete
+    UseModal    Off
