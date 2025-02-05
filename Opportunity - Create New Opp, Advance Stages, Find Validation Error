@@ -40,8 +40,6 @@ Opportunity Advancement Process
     
     #Delete The Opportunity Record
 
-
-    ClickText
     ClickText    Show more actions    anchor=Submit for Approval
     ClickText    Delete
     UseModal    On
