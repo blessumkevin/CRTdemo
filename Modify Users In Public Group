@@ -1,0 +1,20 @@
+    ClickText    Setup
+    ClickText    Opens in a new tab
+    SwitchWindow    NEW
+    SwitchWindow    2
+    TypeText    Quick Find    public group
+    ClickText    Public Groups
+    ClickText    Chicago
+    ClickText    Edit
+    DropDown    Group Type    Users
+    DropDown    duel_select_0    User: Cassia Wallach
+    ClickItem    Add
+    DropDown    duel_select_0    User: Dan Kellogg
+    ClickItem    Add
+    ClickText    Save
+    ClickText    Edit
+    DropDown    duel_select_1    Cassia Wallach
+    ClickItem    Remove
+    DropDown    duel_select_1    Dan Kellogg
+    ClickItem    Remove
+    ClickText    Save
