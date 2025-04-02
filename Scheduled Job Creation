@@ -1,0 +1,18 @@
+    ClickText    Setup
+    ClickText    Opens in a new tab
+    SwitchWindow    NEW
+    TypeText    Quick Find    scheduled jobs\n
+    ClickText    Scheduled Jobs
+    ClickText    Schedule Apex
+    TypeText    *Job Name    Test Job
+    ClickItem    Apex Class Lookup (New Window)
+    SwitchWindow    NEW
+    ClickText    PollResultsScheduler
+    SwitchWindow    2
+    VerifyText        Frequency
+    ClickText         Monthly                  anchor=Frequency
+    DropDown    mdom0    10
+    TypeText         End          12/31/2025
+    DropDown    pst0    12:00 AM
+    Sleep       2
+    ClickText       Cancel
