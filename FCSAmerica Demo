@@ -1,0 +1,152 @@
+Controls
+    Home
+    SwitchWindow    1
+
+#KMB
+Locate Account And Update Region/Currency Information
+
+    LaunchApp    Sales
+    ClickText    Accounts
+    ClickText    Google.com
+    ClickText    Details
+    ClickText    Edit Account Currency
+    PickList    *Account Currency    USD - U.S. Dollar
+    ClickText    Save
+    ClickText    Edit Account Currency
+    PickList    *Account Currency    EUR - Euro
+    ClickText    Save
+    ClickText    Edit Type
+    PickList    Type    Technology Partner
+    ClickText    Save
+    ClickText    Edit Type
+    PickList    Type    Customer - Direct
+    ClickText    Save
+
+Enable/Disable Einstein
+
+    Home
+    GoTo                   ${login_url}lightning/setup/SetupOneHome/home
+    TypeText               Quick Find                  Einstein
+    ClickText              Settings                    anchor=Einstein Discovery
+    VerifyText             Enable Decision Optimization (Beta)
+    ClickCheckbox          Enable Decision Optimization (Beta)EnabledDisabled      on
+    VerifyText             Enabled
+    ClickCheckbox          Enable Decision Optimization (Beta)EnabledDisabled      off
+    VerifyText             Disabled
+
+Modify Public Group
+
+    ClickText    Setup
+    ClickText    Opens in a new tab
+    SwitchWindow    NEW
+    #Necessary?
+    SwitchWindow    2
+    TypeText    Quick Find    public group
+    ClickText    Public Groups
+    ClickText    Chicago
+    ClickText    Edit
+    DropDown    Group Type    Users
+    DropDown    duel_select_0    User: Cassia Wallach
+    ClickItem    Add
+    DropDown    duel_select_0    User: Dan Kellogg
+    ClickItem    Add
+    ClickText    Save
+    ClickText    Edit
+    DropDown    duel_select_1    Cassia Wallach
+    ClickItem    Remove
+    DropDown    duel_select_1    Dan Kellogg
+    ClickItem    Remove
+    ClickText    Save
+
+Assign Permission Set
+
+    ClickText    Setup
+    ClickText    Opens in a new tab
+    SwitchWindow    NEW
+    TypeText    Quick Find    Users
+    ClickText    Users        anchor=User Management Settings
+    ClickText    Bartlik, Evan
+    ClickText    Edit Assignments
+    DropDown    thePage:theForm:thePageBlock:permSetAssignSection:pages:duelingListBox:backingList_a    Copado User
+    ClickItem    Add
+    DropDown    thePage:theForm:thePageBlock:permSetAssignSection:pages:duelingListBox:backingList_a    Data Deploy Admin
+    ClickItem    Add
+    ClickText    Save
+    ClickText    Edit Assignments
+    DropDown    thePage:theForm:thePageBlock:permSetAssignSection:pages:duelingListBox:backingList_s    Copado User
+    ClickItem    Remove
+    DropDown    thePage:theForm:thePageBlock:permSetAssignSection:pages:duelingListBox:backingList_s    Data Deploy Admin
+    ClickItem    Remove
+    ClickText    Save
+
+Scheduled Job Creation (Tab 1)
+
+    SwitchWindow    1
+    ClickText    Setup
+    ClickText    Opens in a new tab
+    SwitchWindow    NEW
+    TypeText    Quick Find    scheduled jobs\n
+    ClickText    Scheduled Jobs
+    ClickText    Schedule Apex
+    TypeText    *Job Name    Test Job
+    ClickItem    Apex Class Lookup (New Window)
+    SwitchWindow    NEW
+    ClickText    PollResultsScheduler
+    SwitchWindow    2
+    VerifyText        Frequency
+    ClickText         Monthly                  anchor=Frequency
+    DropDown    mdom0    10
+    TypeText         End          12/31/2025
+    DropDown    pst0    12:00 AM
+    Sleep       2
+    ClickText       Cancel
+
+
+Opportunity Advancement Process (Other Runs First)
+
+
+    #Create New Opportunity Record
+
+    LaunchApp    Sales
+    ClickText    Opportunities
+    ClickText    New
+    UseModal    On
+    TypeText    *Opportunity Name    Expansion Bundle
+    TypeText    *Close Date          6/30/2025
+    PickList    *Stage    Prospecting
+    ComboBox    Search Accounts...    Acme Inc
+    TypeText    Amount    50000
+    PickList    Lead Source    Web
+    ClickText    Save    partial_match=False
+    UseModal    Off
+
+
+    #Advance Opportunity Stages
+
+    ClickText    Qualification
+    ClickText    Mark as Current Stage
+    ClickText    Needs Analysis
+    ClickText    Mark as Current Stage
+    ClickText    Value Proposition
+    ClickText    Mark as Current Stage
+    VerifyText   You encountered some errors when trying to save this record
+    VerifyText   Please fill in the Next Step field before advancing this opportunity further.
+    Sleep        2
+    ClickText    Details
+    ClickText    Edit Next Step
+    TypeText    Next Step    We are meeting with the decision maker next week to validate vendor of choice.
+    ClickText    Save
+    ClickText    Value Proposition
+    ClickText    Mark as Current Stage
+    ClickText    Edit Stage
+    PickList    *Stage    Closed Won
+    ClickText    Save
+    Sleep        3
+    
+    #Delete The Opportunity Record
+
+    ClickText    Show more actions    anchor=Submit for Approval
+    ClickText    Delete
+    UseModal    On
+    ClickText    Delete
+    UseModal    Off
