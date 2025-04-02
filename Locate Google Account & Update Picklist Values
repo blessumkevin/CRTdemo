@@ -1,0 +1,16 @@
+    LaunchApp    Sales
+    ClickText    Accounts
+    ClickText    Google.com
+    ClickText    Details
+    ClickText    Edit Account Currency
+    PickList    *Account Currency    USD - U.S. Dollar
+    ClickText    Save
+    ClickText    Edit Account Currency
+    PickList    *Account Currency    EUR - Euro
+    ClickText    Save
+    ClickText    Edit Type
+    PickList    Type    Technology Partner
+    ClickText    Save
+    ClickText    Edit Type
+    PickList    Type    Customer - Direct
+    ClickText    Save
