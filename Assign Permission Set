@@ -1,0 +1,18 @@
+    ClickText    Setup
+    ClickText    Opens in a new tab
+    SwitchWindow    NEW
+    TypeText    Quick Find    Users
+    ClickText    Users        anchor=User Management Settings
+    ClickText    Bartlik, Evan
+    ClickText    Edit Assignments
+    DropDown    thePage:theForm:thePageBlock:permSetAssignSection:pages:duelingListBox:backingList_a    Copado User
+    ClickItem    Add
+    DropDown    thePage:theForm:thePageBlock:permSetAssignSection:pages:duelingListBox:backingList_a    Data Deploy Admin
+    ClickItem    Add
+    ClickText    Save
+    ClickText    Edit Assignments
+    DropDown    thePage:theForm:thePageBlock:permSetAssignSection:pages:duelingListBox:backingList_s    Copado User
+    ClickItem    Remove
+    DropDown    thePage:theForm:thePageBlock:permSetAssignSection:pages:duelingListBox:backingList_s    Data Deploy Admin
+    ClickItem    Remove
+    ClickText    Save
