@@ -1,0 +1,11 @@
+Build a CRT Script for the following manual test case.
+
+Steps:
+1) Create a new Account record without selecting a region.
+2) Save the record and verify that an error message is displayed, indicating that the region field is required.
+3) Update the Account record by selecting a valid region.
+4) Fill in a value for the phone number.
+5) Make the Industry value "Banking".
+6) Make the "Employees" field be 500.
+7) Save the record and ensure that it is successfully saved without any errors.
+8) Delete the Account record.
