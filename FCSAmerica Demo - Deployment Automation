@@ -39,7 +39,6 @@ Modify Public Group
     ClickText    Setup
     ClickText    Opens in a new tab
     SwitchWindow    NEW
-    #Necessary?
     SwitchWindow    2
     TypeText    Quick Find    public group
     ClickText    Public Groups
