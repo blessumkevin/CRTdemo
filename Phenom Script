@@ -1,0 +1,10 @@
+Phenom Script
+
+    GoTo    https://careers.phenompeople.com/us/en/
+    TypeText    typehead    engineering\n
+    VerifyText    Engineering Manager
+    ClickText    Apply Now    anchor=P-103720
+    TypeText    First Name*    Kevin
+    TypeText    Email Adress*    kevinblessum@gmail.com
+    TypeText    Last Name*    Blessum
+    TypeText    Phone Number*    9165811856
