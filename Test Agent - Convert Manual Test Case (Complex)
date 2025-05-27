@@ -1,0 +1,54 @@
+Build a CRT script for the following manual test cases:
+
+Account Creation
+
+Navigate to Accounts tab
+Click "New" button
+Enter required fields:
+Account Name: "Acme Corporation"
+Industry: "Technology"
+Phone: "(555) 123-4567"
+Website: "www.acmecorp.com"
+Enter billing address details
+Save the record
+Verify Account creation success
+
+Contact Creation
+
+From Account detail page
+Click "New Contact" from Related list
+Enter contact information:
+First Name: "John"
+Last Name: "Smith"
+Email: "john.smith@acmecorp.com"
+Phone: "(555) 123-4568"
+Title: "Chief Technology Officer"
+Save the record
+Verify Contact is linked to Account
+
+Opportunity Creation
+
+From Account detail page
+Click "New Opportunity" from Related list
+Enter opportunity details:
+Opportunity Name: "Acme Enterprise Solution"
+Stage: "Prospecting"
+Amount: "$100,000"
+Close Date: "12/31/2025"
+Save the record
+Verify Opportunity is linked to Account
+
+Validation Steps
+
+Verify Account details:
+All entered fields are correct
+Related lists show Contact and Opportunity
+Verify Contact details:
+All entered fields are correct
+Account relationship is established
+
+Verify Opportunity details:
+All entered fields are correct
+Account relationship is established
+Stage is set correctly
+Amount and close date are accurate
