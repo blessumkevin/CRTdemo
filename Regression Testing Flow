@@ -1,0 +1,142 @@
+New Lead Record
+    
+    LaunchApp        Sales
+    ClickText        Leads
+    ClickText        New
+    UseModal         On                         
+    VerifyText       New Lead
+    TypeText         First Name       Demo
+    TypeText         Last Name        McTest
+    ClickText        Save                        partial_match=false
+    UseModal         Off                        
+    VerifyText       We hit a snag.
+    VerifyText       Review the following fields
+
+    UseModal         On
+    TypeText         Company          ${company}
+    ClickText        Save                        partial_match=false
+    VerifyText       Demo McTest
+    UseModal         Off
+
+    ClickText        Delete    
+    UseModal         On
+    ClickText        Delete
+    UseModal         Off
+    VerifyText       Lead "Demo McTest" was deleted
+    
+
+
+Opportunity Advancement Process
+
+
+    #Create New Opportunity Record
+
+    ClickText    Opportunities
+    ClickText    New
+    UseModal    On
+    TypeText    *Opportunity Name    Expansion Bundle
+    TypeText    *Close Date          6/30/2025
+    PickList    *Stage    Prospecting
+    ComboBox    Search Accounts...    Acme Inc
+    TypeText    Amount    50000
+    PickList    Lead Source    Web
+    ClickText    Save    partial_match=False
+    UseModal    Off
+
+
+    #Advance Opportunity Stages
+
+    ClickText    Qualification
+    ClickText    Mark as Current Stage
+    ClickText    Needs Analysis
+    ClickText    Mark as Current Stage
+    ClickText    Value Proposition
+    ClickText    Mark as Current Stage
+    VerifyText   You encountered some errors when trying to save this record
+    VerifyText   Please fill in the Next Step field before advancing this opportunity further.
+    Sleep        2
+    ClickText    Details
+    ClickText    Edit Next Step
+    TypeText    Next Step    We are meeting with the decision maker next week to validate vendor of choice.
+    ClickText    Save
+    ClickText    Value Proposition
+    ClickText    Mark as Current Stage
+    ClickText    Edit Stage
+    PickList    *Stage    Closed Won
+    ClickText    Save
+    Sleep        3
+    
+    #Delete The Opportunity Record
+
+    ClickText    Show more actions    anchor=Submit for Approval
+    ClickText    Delete
+    UseModal    On
+    ClickText    Delete
+    UseModal    Off
+
+
+Create New Case Record
+
+
+
+    LaunchApp    Service
+    ClickText    Cases
+    ClickText     New
+    UseModal      On
+    PickList     *Status    Working
+    ComboBox    Search Contacts...    David Montgomery
+    PickList    Type    Electrical
+    PickList    Case Reason    Installation
+    UseModal      Off                         #Turn off UseModal to interact with the error notification.
+    ClickText     Save    partial_match=False
+    VerifyText    We hit a snag.
+    VerifyText    Review the following fields
+    UseModal      On
+    PickList    *Case Origin    Email
+    ClickText   Save                        partial_match=false
+
+
+    
+    #Create Poll
+
+    ClickText    Poll
+    TypeText    Question    Should I respond to this case?
+    ClickText    Choice 1
+    TypeText    Choice 1    Yes
+    ClickText    Choice 2
+    TypeText    Choice 2    No
+    ClickText    Add new choice
+    ClickText    Choice 3
+    TypeText    Choice 3    Maybe
+    ClickText    Add new choice
+    ClickText    Choice 4
+    TypeText    Choice 4    Yep
+    ClickText    Ask    partial_match=False
+   
+   #Delete Poll
+
+    ClickText    Actions for this Feed Item
+    ClickText    Delete on Chatter
+    UseModal    On
+    ClickText    Delete on Chatter
+    UseModal    Off
+
+    #Create Case Comment
+
+    ClickText    Related
+    ClickText    New    partial_match=False
+    UseModal    On
+    TypeText    Body*    I am already in contact with this individual via the chat.
+    ClickCheckbox    Public    on
+    ClickText    Save
+
+    # Wait 3 Seconds
+    Sleep    3
+
+
+    #Delete Case Record
+
+    ClickText    Delete    anchor=Close this window
+    UseModal    On
+    ClickText    Delete
+    UseModal    Off
