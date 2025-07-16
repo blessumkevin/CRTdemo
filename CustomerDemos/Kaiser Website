@@ -1,0 +1,33 @@
+Kaiser
+
+    GoTo    https://healthy.kaiserpermanente.org/northern-california/front-door
+    ClickText    Learn
+    ClickText    Shop plans    anchor=you love.
+    TypeText    ZIP code    95618
+    ClickText    Guide me
+    DropDown    select-county    Yolo
+    ClickText    Guide me
+    VerifyText    Are you an employer?
+    ClickText    Next    anchor=Previous
+    TypeText    Enter the age you are today    40
+    ClickText    Next    anchor=Previous
+    VerifyText    Who will be covered?
+    ClickText    My family and me
+    ClickText    Next    anchor=Previous
+    ClickCheckbox    My spouse    on
+    ClickCheckbox    My dependent(s)    on
+    ClickText    Next    anchor=Previous
+    TypeText    Enter your spouse’s age.    38
+    ClickText    Next    anchor=Previous
+    TypeText    Enter age of dependent 1.    3
+    ClickText    Next    anchor=Previous                  
+    VerifyText    Want to check for health savings?
+    ClickText    Next    anchor=Previous
+    ClickText    If you’re an individual or small family who visits the doctor once a year and has few prescription medications.
+    ClickText    View recommended plans
+    VerifyText    Kaiser Permanente - Bronze 60 HMO
+    VerifyText    Kaiser Permanente - Bronze 60 HMO 7500/0% PCP
+    VerifyText    Kaiser Permanente - Silver 70 HMO Off Exchange
+    ClickText    Choose plan    anchor=$19
+    ClickText    Continue
+    ClickText    View plan details to apply       anchor=$19
