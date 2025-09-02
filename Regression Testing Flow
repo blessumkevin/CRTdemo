@@ -5,8 +5,8 @@ New Lead Record
     ClickText        New
     UseModal         On                         
     VerifyText       New Lead
-    TypeText         First Name       Demo
-    TypeText         Last Name        McTest
+    TypeText         First Name       Alex
+    TypeText         Last Name        Rodriguez
     ClickText        Save                        partial_match=false
     UseModal         Off                        
     VerifyText       We hit a snag.
@@ -15,14 +15,14 @@ New Lead Record
     UseModal         On
     TypeText         Company          ${company}
     ClickText        Save                        partial_match=false
-    VerifyText       Demo McTest
+    VerifyText       Alex Rodriguez
     UseModal         Off
 
     ClickText        Delete    
     UseModal         On
     ClickText        Delete
     UseModal         Off
-    VerifyText       Lead "Demo McTest" was deleted
+    VerifyText       Lead "Alex Rodriguez" was deleted
     
 
 
